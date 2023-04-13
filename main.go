@@ -82,6 +82,7 @@ func updateMovie(w http.ResponseWriter, r *http.Request) {
 
 		if item.ID == params["id"] {
 			movies = append(movies[:index], movies[index+1:]...)
+			movie.ID = params["id"]
 			movies = append(movies, movie)
 			break
 		}
